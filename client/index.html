@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuniex</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+             <div class="logo">
+                <img src="../img/logo.png" alt="Logo" class="logo-small">
+                <a href="#" class="logo-text">Cuniex</a>
+            </div>
+            <nav class="nav">
+                <button class="boton-invisible" onclick="showSection('form-section')"><a href="#form-section">Generar Receta</a></button>
+                <a href="#features">Características</a>
+                <a href="#cta">Empieza Ahora</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section hero-section" id="welcome-section">
+            <div class="container text-center">
+                <div class="logo-hero">
+                    <div class="logo-hero-inner">
+                        <img src="../img/logo.png" alt="Logo" class="logo-image">
+                        <span class="logo-text">Cuniex</span>
+                    </div>
+                </div>
+                <h1>Transforma tus ingredientes en deliciosas recetas con el poder de la IA.</h1>
+                <p class="section-subtitle">Obtén sugerencias de cocina personalizadas, instrucciones paso a paso y orientación culinaria para chefs de todos los niveles.</p>
+                <button class="btn btn-primary" onclick="showSection('form-section')"><a href="#form-section" class="a-form-button">Empieza a cocinar</a></button>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <span class="stat-number">10K+</span>
+                        <p class="stat-text">Recetas generadas</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5K+</span>
+                        <p class="stat-text">Chefs felices</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <p class="stat-text">Cocinas Cubiertas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section features-section" id="features">
+            <div class="container">
+                <h2 class="section-title text-center">¿Por qué elegir Cuniex?</h2>
+                <p class="section-subtitle text-center">Nuestro asistente de cocina inteligente hace que la planificación de comidas sea sencilla con recomendaciones personalizadas.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">✨</span>
+                        <h3 class="feature-title">Sugerencias con IA</h3>
+                        <p class="feature-text">Nuestra IA analiza tus ingredientes y preferencias para sugerir recetas perfectas.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">⏱️</span>
+                        <h3 class="feature-title">Rápido y fácil</h3>
+                        <p class="feature-text">Obtén recetas instantáneas con tiempos de cocción que se adaptan a tu horario.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🌍</span>
+                        <h3 class="feature-title">Cocinas globales</h3>
+                        <p class="feature-text">Explora recetas de todo el mundo, desde pasta italiana hasta salteados asiáticos.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🥗</span>
+                        <h3 class="feature-title">Preferencias dietéticas</h3>
+                        <p class="feature-text">Personaliza recetas para dietas veganas, sin gluten y otras necesidades.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">🔄</span>
+                        <h3 class="feature-title">Sustituciones inteligentes</h3>
+                        <p class="feature-text">¿Te falta un ingrediente? Obtén sugerencias de sustitución inteligentes.</p>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-icon">👨‍👩‍👧‍👦</span>
+                        <h3 class="feature-title">Familiar</h3>
+                        <p class="feature-text">Ajusta las cantidades de las recetas para alimentar a toda tu familia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section form-section hidden" id="form-section">
+            <div class="container">
+                <h2 class="section-title text-center">Nuestro chef IA</h2>
+                <p class="section-subtitle text-center">Dinos qué tienes en tu cocina y nuestra IA creará una receta personalizada para ti.</p>
+                <form id="recipe-form" class="form-card">
+                    <div class="form-group">
+                        <label for="personas">Número de personas:</label>
+                        <input type="number" id="personas" name="personas" value="2" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tipoCocina">Tipo de cocina:</label>
+                        <input type="text" id="tipoCocina" name="tipoCocina" placeholder="Mediterránea" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dificultad">Nivel de dificultad:</label>
+                        <select id="dificultad" name="dificultad" required>
+                            <option value="Fácil">Fácil</option>
+                            <option value="Media">Media</option>
+                            <option value="Difícil">Difícil</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Alergias / Dietas:</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="alergias" value="Sin gluten"> Sin gluten</label>
+                            <label><input type="checkbox" name="alergias" value="Sin lactosa"> Sin lactosa</label>
+                            <label><input type="checkbox" name="alergias" value="Sin frutos secos"> Sin frutos secos</label>
+                            <label><input type="checkbox" name="alergias" value="Sin mariscos"> Sin mariscos</label>
+                            <label><input type="checkbox" name="alergias" value="Vegano"> Vegano</label>
+                            <label><input type="checkbox" name="alergias" value="Vegetariano"> Vegetariano</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ingredientes">Ingredientes disponibles:</label>
+                        <input type="text" id="ingredientes" name="ingredientes" placeholder="queso, pollo, tomate, cebolla, ajo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="otrasEspecificaciones">Otras especificaciones:</label>
+                        <textarea id="otrasEspecificaciones" name="otrasEspecificaciones" rows="3" placeholder="Ej: Prefiero un plato rápido o bajo en calorías"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Generar receta</button>
+                    <div class="spinner" id="loading-spinner"></div>
+                    <p class="error-message" id="error-message"></p>
+                </form>
+            </div>
+        </section>
+
+        <section class="section result-section hidden" id="result-section">
+            <div class="container">
+                <h2 class="section-title text-center">¡Tu Receta está Lista!</h2>
+                <div id="recipe-output" class="recipe-output"></div>
+                <button class="btn btn-secondary" onclick="showSection('form-section')"><a href="#form-section" class="a-form-button">Crear otra receta</a></button>
+            </div>
+        </section>
+
+        <section class="section cta-section" id="cta">
+            <div class="container text-center">
+                <h2 class="section-title">¿Listo para transformar tu cocina?</h2>
+                <p class="section-subtitle">Únete a miles de cocineros que han descubierto la alegría de cocinar con la ayuda de la IA.</p>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <span class="stat-number">4.9/5</span>
+                        <p class="stat-text">Calificación de usuarios</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <p class="stat-text">Uso gratuito</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <p class="stat-text">Disponible</p>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="showSection('form-section')"><a href="#form-section" class="a-form-button">Empieza Ahora</a></button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="../img/logo.png" alt="Logo" class="logo-small">
+            </div>
+            <p>&copy; 2024 AI Chef Assistant. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Privacidad</a>
+                <a href="#">Términos</a>
+                <a href="#">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
