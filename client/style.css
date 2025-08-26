@@ -832,3 +832,22 @@ main {
                 font-size: 24px;
             }
         }
+
+/* cuniex corporation image */
+
+.team-image {
+  display: block;                 
+  margin: 60px auto 20px auto;    
+  max-width: 500px;               
+  width: 100%;                    
+  height: auto;                   
+  border-radius: 12px;            
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease, 
+              box-shadow 0.3s ease; 
+}
+
+.team-image:hover {
+  transform: scale(1.05);         
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+}
