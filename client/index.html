@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KTXF44F4');</script>
+<!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuniex</title>
@@ -10,7 +17,10 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTXF44F4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <header class="header">
         <div class="container">
              <div class="logo">
@@ -170,6 +180,16 @@
             </div>
         </section>
 
+          <div id="cookie-banner">
+            <p>
+            Usamos cookies de <strong><a class="url-cookies" href="https://support.google.com/analytics/answer/7318509?hl=es">Google Analytics</a></strong> 
+            (para medir el tráfico) y <strong><a class="url-cookies" href="https://support.google.com/adsense/answer/1348695?hl=es">Google AdSense</a></strong> 
+            (para mostrar anuncios). ¿Aceptas su uso?
+            </p>
+                <button class="accept" onclick="setCookieConsent(true)">Aceptar</button>
+                <button class="reject" onclick="setCookieConsent(false)">Rechazar</button>
+            </div>
+
     </main>
 
     <footer class="footer">
@@ -185,6 +205,20 @@
             </div>
         </div>
     </footer>
+
+  <script>
+    function setCookieConsent(accepted) {
+      localStorage.setItem("cookieConsent", accepted ? "accepted" : "rejected");
+      document.getElementById("cookie-banner").style.display = "none";
+    }
+
+    // Si ya respondió antes, no mostrar el banner
+    window.onload = function() {
+      if (localStorage.getItem("cookieConsent")) {
+        document.getElementById("cookie-banner").style.display = "none";
+      }
+    }
+  </script>
 
     <script src="script.js"></script>
 
