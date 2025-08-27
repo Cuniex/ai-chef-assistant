@@ -21,23 +21,37 @@ if (!OPENROUTER_API_KEY) {
 app.post('/api/generate-recipe', async (req, res) => {
     const { personas, tipoCocina, dificultad, alergias, ingredientes, otrasEspecificaciones } = req.body;
 
-    const prompt = `
-        Crea una receta detallada para ${personas} personas.
-        Tipo de cocina: ${tipoCocina}.
-        Nivel de dificultad: ${dificultad}.
-        Ingredientes principales: ${ingredientes}.
-        Alergias o dietas especiales: ${alergias.join(', ')}.
-        Otras especificaciones: ${otrasEspecificaciones || 'Ninguna'}.
-        
-        El resultado debe ser una receta completa y bien estructurada.
-        Formato de la receta:
-        1. Título de la receta
-        2. Descripción breve y atractiva del plato.
-        3. Tiempo de preparación y cocción.
-        4. Lista de ingredientes con cantidades (formato: - Ingrediente: Cantidad).
-        5. Instrucciones paso a paso.
-        6. Sugerencia de presentación.
-    `;
+const prompt = `
+Eres un chef experto y creativo. Tu tarea es diseñar una receta detallada y atractiva.
+
+Instrucciones:
+- Número de personas: ${personas}.
+- Tipo de cocina: ${tipoCocina}.
+- Nivel de dificultad: ${dificultad}.
+- Ingredientes principales: ${ingredientes}.
+- Alergias o dietas especiales: ${alergias.length > 0 ? alergias.join(', ') : 'Ninguna'}.
+- Otras especificaciones: ${otrasEspecificaciones || 'Ninguna'}.
+
+⚠️ Importante:
+- La receta debe estar redactada en castellano
+- Usa un tono claro, profesional y atractivo.
+- Aporta creatividad, sugerencias de técnicas culinarias y toques especiales que enriquezcan el plato.
+- Asegúrate de que sea una receta viable en la práctica, no solo teórica.
+
+Formato de salida de la receta:
+1. **Título del plato**
+2. **Descripción breve** (atractiva, que despierte apetito).
+3. **Tiempo de preparación y cocción** (en minutos).
+4. **Lista de ingredientes con cantidades exactas**  
+   - Ingrediente: Cantidad  
+   (incluye los principales y los adicionales necesarios).
+5. **Instrucciones paso a paso**, claras y numeradas.
+6. **Sugerencia de presentación** (platos, decoración, acompañamientos).
+7. **Consejos adicionales del chef** (opcional: trucos, variaciones o maridajes).
+
+Entrega la receta final bien estructurada y lista para ser usada.
+`;
+
 
     try {
         const openrouterRes = await fetch("https://openrouter.ai/api/v1/chat/completions", {
