@@ -470,6 +470,22 @@ main {
     color: var(--accent-color);
 }
 
+.footer-social {
+    margin-top: 15px;
+}
+
+.footer-social a {
+    margin: 0 8px;
+    font-size: 20px;
+    color: #fff; 
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #ffcc00; 
+}
+
+
 /* --- Media Queries para Responsive Design --- */
 @media (max-width: 992px) {
     .hero-section h1 {
